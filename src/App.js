@@ -5,7 +5,7 @@ const MyComponent = () => {
 
   const generateToken = async (event) => {
     event.preventDefault();
-    const url = 'http://localhost:3000/api/token'; // Replace with your API endpoint
+    const url = 'https://yanivdg-didactic-happiness-7g4qrjv69rq3qxv-3000.preview.app.github.dev/api/token'; // Replace with your API endpoint
     
 	//const requestBody = { value: 'blabla' }; // Replace with your request body
 	const sk = document.getElementById("txtSecretKey");
