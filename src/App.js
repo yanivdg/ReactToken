@@ -1,78 +1,83 @@
 import React, { useState } from 'react';
 
-const MyComponent = () => {
-  const [token, setMessage] = useState('');
+const App = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [result, setResult] = useState('');
+  const [token, setToken] = useState('');
+  const [htmlContent, setHtmlContent] = useState('');
 
-  const generateToken = async (event) => {
-    event.preventDefault();
-    const url = 'https://ysmdgk8hx6.execute-api.us-west-1.amazonaws.com/default/SubScribers'; // Replace with your API endpoint
-    
-	//const requestBody = { value: 'blabla' }; // Replace with your request body
-	const user = document.getElementById("txtUser");
-	const pwd = document.getElementById("txtPwd");
-	var element = document.getElementsByTagName("div")[1];
-	if (user && pwd) 
-	{
-		const requestBody = {username: user.value,password: pwd.value};
-        let response;
-		try
-		{
-		 response = 
-			await fetch(url, {
-								method: 'POST',
-								headers: {
-											'Content-Type': 'application/json',
-											'Access-Control-Allow-Origin':'*'
-										 },
-										body: JSON.stringify(requestBody)
-							  });
-							    if (!response.ok) 
-								{
-                                 setMessage(response.statusText);
-								 element.style.color = "red";
-                               }
-		} 
-		catch (error) {console.log('Error:', error);}
-		if (response) 
-		{
-		 const data = await response.json();
-		 if(response.ok)
-		 {
-		 setMessage(data.token); // Assuming the response returns a token field
-		 element.style.color = "green";
-		 }
-		 else
-		 {
-			 setMessage(response.statusText);
-			 element.style.color = "red";
-		}
-	  }		
-  }
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+ const url = 'https://slnyr83a29.execute-api.us-west-1.amazonaws.com/default/subscribers';
+    try {
+      const response = await fetch(url , {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        const authToken = data.token; // Assuming the token property name is "token"
+        setResult('Authentication successful');
+        setToken(authToken); // Store the token in state for further use
+
+        // Make a new request with the token
+        const htmlResponse = await fetch(url , {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ token: authToken }),
+        });
+
+        if (htmlResponse.ok) {
+          const htmlData = await htmlResponse.json();
+          setHtmlContent(htmlData.body);
+        } else {
+          setHtmlContent('Failed to load HTML content');
+        }
+      } else {
+        setResult('Authentication failed');
+        setHtmlContent('');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setResult('An error occurred.');
+      setHtmlContent('');
+    }
+  };
+
   return (
-      <form>
-		<label id="lbluser">User Name:</label>
-		<input type="text" id="txtUser"/><br></br>
-		<label id="lblpwd">Pwd:</label>
-		<input type="text" id="txtPwd"/><br></br><br></br>
-	  	<button onClick={generateToken}>Generate Token with React</button>
-		<div>{token}</div>
-	  </form>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <div>{result}</div>
+      {htmlContent && <div dangerouslySetInnerHTML={{ __html: htmlContent }} />}
+    </div>
   );
 };
 
-export default MyComponent;
-
-/*
-try {
-    let response = await fetch(url, {
-      method: "POST",
-								headers: {
-											'Content-Type': 'application/json',
-										 },
-										body: JSON.stringify(requestBody)
-							  });
-} catch(error) {
-    // Error handling here!
-}
-*/
+export default App;
