@@ -73,10 +73,14 @@ const App = () => {
       </div>
         <div  style={{textAlign: "center",color:ColorContent ,display: DisplayState}}>
         <h3 style={{color:'green',display: DisplayState}}>Please enter your login details to get randomize picture:</h3>
+        <div>
           <label htmlFor="username">User Name:</label>
           <input type="text"  id="username" value={username} onChange={(e) => setUsername(e.target.value)}/>
+          </div>
+          <div>
           <label htmlFor="password">Password:</label>
          <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+         </div>
          <button type="login">Login</button>
         </div>
       </form>
