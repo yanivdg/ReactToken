@@ -4,7 +4,7 @@ const App = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [result, setResult] = useState('');
-  const [Token, setToken] = useState('');
+  //const [Token, setToken] = useState('');
   const [htmlContent, setHtmlContent] = useState('');
   const [ColorContent,setColorContent] =  useState('');
   const [DisplayState,setDisplayState] =  useState('');
@@ -24,12 +24,12 @@ const App = () => {
       if (response.ok) 
       {
         const data = await response.json();
-        if(data.statusCode == 200)
+        if(data.statusCode === 200)
         {
           const authToken = data.token; // Assuming the token property name is "token"
       
           setResult('Authentication successful');
-          setToken(authToken); // Store the token in state for further use
+          //setToken(authToken); // Store the token in state for further use
           setColorContent('green');
           setDisplayState('none');
           // Make a new request with the token
