@@ -70,7 +70,7 @@ const App = () => {
       <form onSubmit={handleSubmit}>
         <div style={{textAlign: "center"}}>
       <h2 style={{color:'cyan'}}>Welcome to Y.D's experimental site</h2>
-      <h2 style={{color:'darkgoldenrod'}}>built on GitHub(client side) and AWS(server side)</h2>
+      <h2 style={{color:'darkgoldenrod'}}>built on GitHub(React-client side) and AWS(python-server side)</h2>
       </div>
         <div  style={{textAlign: "center",color:ColorContent ,display: DisplayState}}>
         <h3 style={{color:'green',display: DisplayState}}>Please enter your login details to get randomize picture:</h3>
