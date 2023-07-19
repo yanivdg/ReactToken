@@ -1,7 +1,7 @@
 //import React from 'react';
 //import React from 'https://unpkg.com/react@18/umd/react.development.js';
 //import ReactDOM from 'react-dom/client';
-import './src/index.css';
+import './index.css';
 import App from './src/App';
 import reportWebVitals from './reportWebVitals';
 
