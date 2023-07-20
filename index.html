@@ -4,28 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My React App</title>
-  <h1>List of Files on Server</h1>
-  <ul id="fileList"></ul>
-<script>
-    fetch('.')
-      .then(response => response.json())
-      .then(data => {
-        const fileList = document.getElementById('fileList');
-        data.files.forEach(file => {
-          const li = document.createElement('li');
-          li.textContent = file;
-          fileList.appendChild(li);
-        });
-      })
-      .catch(error => console.error('Error:', error));
-</script>
 </head>
 <body>
-  <div id="root"></div>
-  
-<!-- Load Babel standalone -->
+<div id="root"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
-
 <!-- Load React and ReactDOM from a CDN (Content Delivery Network) -->
 <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
