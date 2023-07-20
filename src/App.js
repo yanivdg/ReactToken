@@ -1,4 +1,3 @@
-<script type="text/babel">
 import React, { useState } from 'https://unpkg.com/react@17/umd/react.development.js';
 const App = () => {
   const [username, setUsername] = useState('');
@@ -66,30 +65,27 @@ const App = () => {
     }
   };
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div style={{textAlign: "center"}}>
-      <h2 style={{color:'cyan'}}>Welcome to Y.D's experimental site</h2>
-      <h2 style={{color:'darkgoldenrod'}}>built on GitHub(React-client side) and AWS(python-server side)</h2>
-      </div>
-        <div  style={{textAlign: "center",color:ColorContent ,display: DisplayState}}>
-        <h3 style={{color:'green',display: DisplayState}}>Please enter your login details to get randomize picture:</h3>
-        <div>
-          <label htmlFor="username">User Name:</label>
-          <input type="text"  id="username" value={username} onChange={(e) => setUsername(e.target.value)}/>
-          </div>
-          <div>
-          <label htmlFor="password">Password:</label>
-         <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-         </div>
-         <button type="login">Login</button>
-        </div>
-      </form>
-      <div  style={{textAlign: "center", color: ColorContent }}>{result}</div>
-      {htmlContent && <div  style={{textAlign: "center"}} dangerouslySetInnerHTML={{ __html: htmlContent }} />}
-    </div>
+    React.createElement('div', null,
+      React.createElement('form', { onSubmit: handleSubmit },
+        React.createElement('div', { style: { textAlign: 'center' } },
+          React.createElement('h2', { style: { color: 'cyan' } }, "Welcome to Y.D's experimental site"),
+          React.createElement('h2', { style: { color: 'darkgoldenrod' } }, "built on GitHub(React-client side) and AWS(python-server side)")
+        ),
+        React.createElement('div', { style: { textAlign: 'center', color: ColorContent, display: DisplayState } },
+          React.createElement('h3', { style: { color: 'green', display: DisplayState } }, "Please enter your login details to get randomize picture:"),
+          React.createElement('div', null,
+            React.createElement('label', { htmlFor: 'username' }, "User Name:"),
+            React.createElement('input', { type: 'text', id: 'username', value: username, onChange: (e) => setUsername(e.target.value) })
+          ),
+          React.createElement('div', null,
+            React.createElement('label', { htmlFor: 'password' }, "Password:"),
+            React.createElement('input', { type: 'password', id: 'password', value: password, onChange: (e) => setPassword(e.target.value) })
+          ),
+          React.createElement('button', { type: 'submit' }, "Login")
+        )
+      ),
+      React.createElement('div', { style: { textAlign: 'center', color: ColorContent } }, result),
+      htmlContent && React.createElement('div', { style: { textAlign: 'center' }, dangerouslySetInnerHTML: { __html: htmlContent } })
   );
 };
-  // Use ReactDOM.createRoot().render() to render the App component
-  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
-</script>
+export default App;
