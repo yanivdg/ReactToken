@@ -90,8 +90,6 @@ const App = () => {
     )
    );
 };
-  );
-};
 
 // Use ReactDOM.render to render the App component to the root element
 ReactDOM.render(
