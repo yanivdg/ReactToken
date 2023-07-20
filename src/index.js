@@ -3,7 +3,7 @@
 //import './index.css';
 //import App from './App';
 //import reportWebVitals from './reportWebVitals';
-import React from 'https://unpkg.com/react@17/umd/react.development.js';
+import React ;//from 'https://unpkg.com/react@17/umd/react.development.js';
 import ReactDOM from 'https://unpkg.com/react-dom@17/umd/react-dom.development.js';
 import 'https://cdn.jsdelivr.net/gh/yanivdg/ReactToken@gh-pages/src/index.css';
 import App from 'https://cdn.jsdelivr.net/gh/yanivdg/ReactToken@gh-pages/src/App';
