@@ -90,5 +90,15 @@ const App = () => {
     )
    );
 };
-// Render the App component to the root element
-ReactDOM.render(<App />, document.getElementById('root'));
+  );
+};
+
+// Use ReactDOM.render to render the App component to the root element
+ReactDOM.render(
+  React.createElement(
+    React.StrictMode,
+    null,
+    React.createElement(App, null)
+  ),
+  document.getElementById('root')
+);
