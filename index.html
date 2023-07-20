@@ -4,14 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My React App</title>
+  <h1>List of Files on Server</h1>
+  <ul id="fileList"></ul>
 <script>
-var inp = "./";
-// Access and handle the files 
-
-for (i = 0; i < inp.files.length; i++) {
-    let file = inp.files[i];
-    // do things with file
-}
+    fetch('/')
+      .then(response => response.json())
+      .then(data => {
+        const fileList = document.getElementById('fileList');
+        data.files.forEach(file => {
+          const li = document.createElement('li');
+          li.textContent = file;
+          fileList.appendChild(li);
+        });
+      })
+      .catch(error => console.error('Error:', error));
 </script>
 </head>
 <body>
