@@ -1,10 +1,12 @@
 //import React from 'react';
 //import React from 'https://unpkg.com/react@18/umd/react.development.js';
 //import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './src/App';
-import reportWebVitals from './reportWebVitals';
-
+//import './index.css';
+import 'https://cdn.jsdelivr.net/gh/yanivdg/ReactToken@gh-pages/index.css'
+//import App from './src/App';
+import App from 'https://cdn.jsdelivr.net/gh/yanivdg/ReactToken@gh-pages/App';
+//import reportWebVitals from './reportWebVitals';
+import reportWebVitals from 'https://cdn.jsdelivr.net/gh/yanivdg/ReactToken@gh-pages/reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
