@@ -7,7 +7,7 @@
   <h1>List of Files on Server</h1>
   <ul id="fileList"></ul>
 <script>
-    fetch('/')
+    fetch('.')
       .then(response => response.json())
       .then(data => {
         const fileList = document.getElementById('fileList');
