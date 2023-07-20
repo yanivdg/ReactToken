@@ -1,3 +1,4 @@
+<script type="text/babel">
 import React, { useState } from 'https://unpkg.com/react@17/umd/react.development.js';
 const App = () => {
   const [username, setUsername] = useState('');
@@ -89,5 +90,6 @@ const App = () => {
     </div>
   );
 };
-
-export default App;
+  // Use ReactDOM.createRoot().render() to render the App component
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
