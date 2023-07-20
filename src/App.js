@@ -86,6 +86,7 @@ const App = () => {
       ),
       React.createElement('div', { style: { textAlign: 'center', color: ColorContent } }, result),
       htmlContent && React.createElement('div', { style: { textAlign: 'center' }, dangerouslySetInnerHTML: { __html: htmlContent } })
+    )
   );
 };
 export default App;
