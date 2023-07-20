@@ -1,125 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta
-    name="description"
-    content="Web site created using create-react-app"
-  />
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-  <title>React App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My React App</title>
 </head>
 <body>
   <div id="root"></div>
-  <!-- Load React and React DOM. -->
-  <!-- Note: When deploying, replace "development.js" with "production.min.js". -->
-  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-     <script type="module">
-    import React from 'https://unpkg.com/react@17/umd/react.development.js';
-    import ReactDOM from 'https://unpkg.com/react-dom@17/umd/react-dom.development.js';
-   const App = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [result, setResult] = useState('');
-  //const [Token, setToken] = useState('');
-  const [htmlContent, setHtmlContent] = useState('');
-  const [ColorContent,setColorContent] =  useState('');
-  const [DisplayState,setDisplayState] =  useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
- const url = 'https://slnyr83a29.execute-api.us-west-1.amazonaws.com/default/subscribers';
-    try {
-      const response = await fetch(url , {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
+  <!-- Load React and ReactDOM from a CDN (Content Delivery Network) -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 
-      if (response.ok) 
-      {
-        const data = await response.json();
-        if(data.statusCode === 200)
-        {
-          const authToken = data.token; // Assuming the token property name is "token"
-      
-          setResult('Authentication successful');
-          //setToken(authToken); // Store the token in state for further use
-          setColorContent('green');
-          setDisplayState('none');
-          // Make a new request with the token
-          const htmlResponse = await fetch(url , {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ token: authToken }),
-          });
-          if (htmlResponse.ok) 
-          {
-            const htmlData = await htmlResponse.json();
-            setHtmlContent(htmlData.body);
-          } 
-          else 
-          {
-            setHtmlContent('Failed to load HTML content');
+  <!-- Your custom script -->
+  <script>
+    // Convert the MyComponent code into a function that renders the JSX elements directly
+    const MyComponent = () => {
+      const [token, setMessage] = React.useState('');
+
+      const generateToken = async (event) => {
+        event.preventDefault();
+        const url = 'https://someurl'; // Replace with your API endpoint
+        const user = document.getElementById("txtUser");
+        const pwd = document.getElementById("txtPwd");
+        var element = document.getElementsByTagName("div")[1];
+        if (user && pwd) {
+          const requestBody = { username: user.value, password: pwd.value };
+          try {
+            let response = await fetch(url, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+              },
+              body: JSON.stringify(requestBody)
+            });
+            if (!response.ok) {
+              setMessage(response.statusText);
+              element.style.color = "red";
+            } else {
+              const data = await response.json();
+              setMessage(data.token); // Assuming the response returns a token field
+              element.style.color = "green";
+            }
+          } catch (error) {
+            console.log('Error:', error);
           }
-      } 
-      else 
-      {
-        setResult('Authentication failed');
-        setColorContent('red');
-        setHtmlContent('');
+        }
       }
-    } 
-  }
-    catch (error) {
-      console.error('Error:', error);
-      setResult('An error occurred.'+ error);
-      setHtmlContent('');
-      setColorContent('red');
-    }
-  };
-  return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div style={{textAlign: "center"}}>
-      <h2 style={{color:'cyan'}}>Welcome to Y.D's experimental site</h2>
-      <h2 style={{color:'darkgoldenrod'}}>built on GitHub(React-client side) and AWS(python-server side)</h2>
-      </div>
-        <div  style={{textAlign: "center",color:ColorContent ,display: DisplayState}}>
-        <h3 style={{color:'green',display: DisplayState}}>Please enter your login details to get randomize picture:</h3>
-        <div>
-          <label htmlFor="username">User Name:</label>
-          <input type="text"  id="username" value={username} onChange={(e) => setUsername(e.target.value)}/>
-          </div>
-          <div>
-          <label htmlFor="password">Password:</label>
-         <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-         </div>
-         <button type="login">Login</button>
-        </div>
-      </form>
-      <div  style={{textAlign: "center", color: ColorContent }}>{result}</div>
-      {htmlContent && <div  style={{textAlign: "center"}} dangerouslySetInnerHTML={{ __html: htmlContent }} />}
-    </div>
-  );
-};
-       ReactDOM.render(<App />, document.getElementById('root'));
- </script>
-  <!-- Load your custom React component (App.js) -->
-  <script src="index.js" crossorigin></script>
 
-  <!-- Optionally, you can load the index.js file to render the React component. -->
-  <!-- But in this case, we will rely on App.js directly. -->
-  <!-- <script src="index.js" crossorigin></script> -->
+      // JSX rendering
+      return (
+        <form>
+          <label id="lbluser">User Name:</label>
+          <input type="text" id="txtUser" /><br></br>
+          <label id="lblpwd">Pwd:</label>
+          <input type="text" id="txtPwd" /><br></br><br></br>
+          <button onClick={generateToken}>Generate Token with React</button>
+          <div>{token}</div>
+        </form>
+      );
+    };
 
-  <noscript>You need to enable JavaScript to run this app.</noscript>
+    // Use ReactDOM.render to render the MyComponent in the HTML
+    ReactDOM.render(<MyComponent />, document.getElementById('root'));
+  </script>
 </body>
 </html>
