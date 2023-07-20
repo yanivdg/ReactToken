@@ -7,13 +7,16 @@
 </head>
 <body>
   <div id="root"></div>
+  
+<!-- Load Babel standalone -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 
-  <!-- Load React and ReactDOM from a CDN (Content Delivery Network) -->
-  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<!-- Load React and ReactDOM from a CDN (Content Delivery Network) -->
+<script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 
-  <!-- Your custom script -->
-  <script>
+<!-- Your custom script -->
+<script type="text/babel">
     // Convert the MyComponent code into a function that renders the JSX elements directly
     const MyComponent = () => {
       const [token, setMessage] = React.useState('');
