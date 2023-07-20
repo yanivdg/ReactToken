@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My React App</title>
+  <input type="file" name="client-file" id="get-files" multiple />
+<script>
+var inp = document.getElementById("get-files");
+// Access and handle the files 
+
+for (i = 0; i < inp.files.length; i++) {
+    let file = inp.files[i];
+    // do things with file
+}
+</script>
 </head>
 <body>
   <div id="root"></div>
