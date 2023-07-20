@@ -65,7 +65,7 @@ const App = () => {
     }
   };
   
-  return (
+ return (
     React.createElement('div', null,
       React.createElement('form', { onSubmit: handleSubmit },
         React.createElement('div', { style: { textAlign: 'center' } },
