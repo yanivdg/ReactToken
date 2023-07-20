@@ -9,6 +9,7 @@
 //import App from 'https://cdn.jsdelivr.net/gh/yanivdg/ReactToken@gh-pages/App';
 //import reportWebVitals from 'https://cdn.jsdelivr.net/gh/yanivdg/ReactToken@gh-pages/reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
+alert('test');
 root.render(
   <React.StrictMode>
     <App />
