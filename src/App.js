@@ -75,11 +75,11 @@ const App = () => {
         React.createElement('div', { style: { textAlign: 'center', color: ColorContent, display: DisplayState } },
           React.createElement('h3', { style: { color: 'green', display: DisplayState } }, "Please enter your login details to get randomize picture:"),
           React.createElement('div', null,
-            React.createElement('label', { { style: { color: 'white' }, htmlFor: 'username' }, "User Name:"),
+            React.createElement('label', { style: { color: 'white' }, htmlFor: 'username' }, "User Name:"),
             React.createElement('input', { type: 'text', id: 'username', value: username, onChange: (e) => setUsername(e.target.value) })
           ),
           React.createElement('div', null,
-            React.createElement('label', { { style: { color: 'white' }, htmlFor: 'password' }, "Password:"),
+            React.createElement('label', { style: { color: 'white' }, htmlFor: 'password' }, "Password:"),
             React.createElement('input', { type: 'password', id: 'password', value: password, onChange: (e) => setPassword(e.target.value) })
           ),
           React.createElement('button', { type: 'submit' }, "Login")
