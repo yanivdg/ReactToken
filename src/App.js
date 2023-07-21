@@ -27,7 +27,7 @@ const App = () => {
         {
           const authToken = data.token; // Assuming the token property name is "token"
           const fullName = data.fullname;
-          setResult('Authentication successful' + <br\> + 'Hello ' + fullName + <br\> +  'Please wait for the Image to be loaded');
+          setResult("Authentication successful"+{\n} +"Hello " + fullName + {\n} +"Please wait for the Image to be loaded");
           //setToken(authToken); // Store the token in state for further use
           setColorContent('green');
           setDisplayState('none');
@@ -64,7 +64,7 @@ const App = () => {
       setColorContent('red');
     }
   };
-  
+  const sentences = result.split('\n');
  return (
     React.createElement('div', null,
       React.createElement('form', { onSubmit: handleSubmit },
@@ -85,7 +85,7 @@ const App = () => {
           React.createElement('button', { type: 'submit' }, "Login")
         )
       ),
-      React.createElement('div', { style: { textAlign: 'center', color: ColorContent } }, result),
+      React.createElement('div', { style: { textAlign: 'center', color: ColorContent }}, result),
       htmlContent && React.createElement('div', { style: { textAlign: 'center' }, dangerouslySetInnerHTML: { __html: htmlContent } })
     )
    );
