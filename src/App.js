@@ -26,8 +26,8 @@ const App = () => {
         if(data.statusCode === 200)
         {
           const authToken = data.token; // Assuming the token property name is "token"
-      
-          setResult('Authentication successful');
+          const fullName = data.fullname;
+          setResult('Hello ' + fullName + ',Authentication successful - Please wait for the Image to be loaded');
           //setToken(authToken); // Store the token in state for further use
           setColorContent('green');
           setDisplayState('none');
