@@ -82,7 +82,8 @@ const App = () => {
             React.createElement('label', { style: { color: 'white' }, htmlFor: 'password' }, "Password:"),
             React.createElement('input', { type: 'password', id: 'password', value: password, onChange: (e) => setPassword(e.target.value) })
           ),
-          React.createElement('button', { type: 'submit' }, "Login")
+          React.createElement('button', { type: 'submit' }, "Login"),
+          React.createElement('button', { type: 'submit' }, "Sign Up")
         )
       ),
       //React.createElement('div', { style: { textAlign: 'center', color: ColorContent }}, result),
