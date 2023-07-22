@@ -83,7 +83,8 @@ const App = () => {
             React.createElement('input', { type: 'password', id: 'password', value: password, onChange: (e) => setPassword(e.target.value) })
           ),
           React.createElement('button', { type: 'submit' }, "Login"),
-          React.createElement('button', { type: 'submit' }, "Sign Up")
+          React.createElement('button', { type: 'submit' }, "Sign Up", 
+                              onClick: () => "window.location.href='https://liquidbacket.s3.us-west-1.amazonaws.com/SignUp.html';")
         )
       ),
       //React.createElement('div', { style: { textAlign: 'center', color: ColorContent }}, result),
