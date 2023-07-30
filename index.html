@@ -13,59 +13,15 @@
 </head>
 <body>
 <div id="root"></div>
-<div id="player"></div>
-    <script>
-    // Replace 'VIDEO_ID' with the YouTube video ID you want to use as the background
-    const videoId = 'c7ox2DYLdgo';
-    // Replace 'START_TIME' and 'END_TIME' with the specific time you want to loop the video (in seconds)
-    const startTime = 18;
-    const endTime = 5;
-    // Load the YouTube API script asynchronously
-    const tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    // Function to create the YouTube player once the API script is loaded
-    let player;
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('player', {
-        height: window.innerHeight,
-        width: window.innerWidth,
-        videoId: videoId,
-        playerVars: {
-          autoplay: 1,
-          controls: 0,
-          loop: 1,
-          start: startTime,
-          end: endTime,
-          playlist: videoId,
-          modestbranding: 1,
-          fs: 0,
-          iv_load_policy: 3,
-          showinfo: 0,
-          mute: 1
-        },
-        events: {
-          onReady: onPlayerReady,
-          onStateChange: onPlayerStateChange
-        }
-      });
-    }
-
-    // Function to handle video playback and loop
-    function onPlayerReady(event) {
-      event.target.playVideo();
-    }
-
-    // Function to restart the video when it reaches the end (looping)
-    function onPlayerStateChange(event) {
-      if (event.data === YT.PlayerState.ENDED) {
-        player.seekTo(startTime);
-        player.playVideo();
-      }
-    }
-  </script>
+  <!-- YouTube Video Player Container -->
+  <div id="player"></div>
+  <!-- Your website content -->
+  <div class="content">
+    <h1>Welcome to My Website</h1>
+    <p>This is some content on my website.</p>
+  </div>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js" crossorigin></script>
 <!-- Load React and ReactDOM from a CDN (Content Delivery Network) -->
 <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
