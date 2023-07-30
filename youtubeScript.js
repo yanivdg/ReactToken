@@ -1,9 +1,9 @@
 // Your YouTube Video ID
-const videoId = "YOUR_YOUTUBE_VIDEO_ID";
+const videoId = "c7ox2DYLdgo";
 
 // Video start and end times (in seconds)
-const startTime = 0;
-const endTime = 10;
+const startTime = 18;
+const endTime = 28;
 
 // Function to create the YouTube player
 function onYouTubeIframeAPIReady() {
