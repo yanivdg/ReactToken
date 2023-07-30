@@ -2,7 +2,7 @@
     const videoId = 'c7ox2DYLdgo';
     // Replace 'START_TIME' and 'END_TIME' with the specific time you want to loop the video (in seconds)
     const startTime = 18;
-    const endTime = 5;
+    const endTime = 25;
     let player;
     function onYouTubeIframeAPIReady() {
       player = new YT.Player('player', {
