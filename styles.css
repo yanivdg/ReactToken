@@ -15,7 +15,8 @@ body, html {
   z-index: -1; /* Put the video container behind other elements */
 }
 .img {
-    max-width: 100%;
+    max-width: 99%;
+    max-height: 99%;
 }
 /* Center the website content vertically and horizontally */
 .content {
