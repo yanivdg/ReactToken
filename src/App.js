@@ -90,7 +90,7 @@ const App = () => {
       //React.createElement('div', { style: { textAlign: 'center', color: ColorContent }}, result),
       React.createElement('div', { style: { textAlign: 'center', color: ColorContent }}, 
                           result.split('\n').map((line, index) => (React.createElement('p', { key: index }, line)))),
-      htmlContent && React.createElement('div', { style: { textAlign: 'center' }, dangerouslySetInnerHTML: { __html: htmlContent } })
+      htmlContent && React.createElement('div', { style: { textAlign: 'right' }, dangerouslySetInnerHTML: { __html: htmlContent } })
     )
    );
 };
