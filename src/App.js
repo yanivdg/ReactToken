@@ -27,7 +27,7 @@ const App = () => {
         {
           const authToken = data.token; // Assuming the token property name is "token"
           const fullName = data.fullname;
-          setResult('Authentication successful\nHello ' + fullName + '\nPress the button to change picture');
+          setResult('Authentication successful\nHello ' + fullName + '\nPlease wait for the Image to be loaded');
           //setToken(authToken); // Store the token in state for further use
           setColorContent('green');
           setDisplayState('none');
@@ -43,7 +43,7 @@ const App = () => {
           {
             const htmlData = await htmlResponse.json();
             setHtmlContent(htmlData.body);
-            setResult('Authentication successful\nHello ' + fullName + '\nPlease wait for the Image to be loaded');
+            setResult('Authentication successful\nHello ' + fullName  + '\nPress the button to change picture');
           } 
           else 
           {
