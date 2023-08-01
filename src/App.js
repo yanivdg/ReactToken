@@ -76,14 +76,14 @@ const App = () => {
           React.createElement('h3', { style: { color: 'green', display: DisplayState } }, "Please enter your login details to get randomize picture:"),
           React.createElement('div', null,
             React.createElement('label', { style: { color: 'white' , display: DisplayState}, htmlFor: 'username' }, "User Name:"),
-            React.createElement('input', { style: { color: 'white' , display: DisplayState}, type: 'text', id: 'username', value: username, onChange: (e) => setUsername(e.target.value) })
+            React.createElement('input', { style: {display: DisplayState}, type: 'text', id: 'username', value: username, onChange: (e) => setUsername(e.target.value) })
           ),
           React.createElement('div', null,
             React.createElement('label', { style: { color: 'white', display: DisplayState }, htmlFor: 'password' }, "Password:"),
-            React.createElement('input', { style: { color: 'white' , display: DisplayState}, type: 'password', id: 'password', value: password, onChange: (e) => setPassword(e.target.value) })
+            React.createElement('input', { style: {display: DisplayState}, type: 'password', id: 'password', value: password, onChange: (e) => setPassword(e.target.value) })
           ),
           React.createElement('button', { type: 'submit' }, "Login"),
-          React.createElement('button', { type: 'submit', onClick: () => 
+          React.createElement('button', { style: {display: DisplayState}, type: 'submit', onClick: () => 
                                         { window.location.href = 'https://liquidbacket.s3.us-west-1.amazonaws.com/SignUp.html'; }}, "Sign Up")
         )
       ),
