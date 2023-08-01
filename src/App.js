@@ -72,7 +72,7 @@ const App = () => {
           React.createElement('h2', { style: { color: 'cyan' } }, "Welcome to Y.D's experimental site"),
           React.createElement('h2', { style: { color: 'darkgoldenrod' } }, "built on GitHub(React-client side) and AWS(python-server side)")
         ),
-        React.createElement('div', { style: { textAlign: 'center', color: ColorContent, display: DisplayState } },
+        React.createElement('div', { style: { textAlign: 'center', color: ColorContent } },
           React.createElement('h3', { style: { color: 'green', display: DisplayState } }, "Please enter your login details to get randomize picture:"),
           React.createElement('div', null,
             React.createElement('label', { style: { color: 'white' }, htmlFor: 'username' }, "User Name:"),
