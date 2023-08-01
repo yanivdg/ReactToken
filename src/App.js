@@ -43,6 +43,7 @@ const App = () => {
           {
             const htmlData = await htmlResponse.json();
             setHtmlContent(htmlData.body);
+            setResult('Authentication successful\nHello ' + fullName + '\nPress the button to change picture');
           } 
           else 
           {
@@ -82,7 +83,7 @@ const App = () => {
             React.createElement('label', { style: { color: 'white', display: DisplayState }, htmlFor: 'password' }, "Password:"),
             React.createElement('input', { style: {display: DisplayState}, type: 'password', id: 'password', value: password, onChange: (e) => setPassword(e.target.value) })
           ),
-          React.createElement('button', { type: 'submit' }, "Login$"),
+          React.createElement('button', { type: 'submit' }, "Login"),
           React.createElement('button', { style: {display: DisplayState}, type: 'submit', onClick: () => 
                                         { window.location.href = 'https://liquidbacket.s3.us-west-1.amazonaws.com/SignUp.html'; }}, "Sign Up")
         )
