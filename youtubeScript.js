@@ -5,7 +5,7 @@
     const endTime = 80;
     let player;
     function onYouTubeIframeAPIReady() {
-      const r  = Math.floor(Math.random() * 2;
+      const r  = Math.floor(Math.random() * 2);
       player = new YT.Player('player', {
         height: window.innerHeight,
         width: window.innerWidth,
