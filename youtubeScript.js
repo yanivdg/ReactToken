@@ -33,7 +33,7 @@
     function onPlayerReady(event) {
       event.target.playVideo();
     }
-    Boolean flag = false;
+    let flag = false;
     function setMovieId(flag)
     {
         flag = !flag;
