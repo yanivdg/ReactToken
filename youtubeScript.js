@@ -8,7 +8,7 @@
       player = new YT.Player('player', {
         height: window.innerHeight,
         width: window.innerWidth,
-        videoId: videoId,
+        videoId: setMovieId(flag),
         playerVars: {
           autoplay: 1,
           controls: 0,
@@ -33,7 +33,12 @@
     function onPlayerReady(event) {
       event.target.playVideo();
     }
-
+    boolean flag = false;
+    function setMovieId(flag)
+    {
+        flag = !flag;
+        return  flag ? 'RWJGj4Xp_do': 'c7ox2DYLdgo';
+    }
     // Function to restart the video when it reaches the end (looping)
     function onPlayerStateChange(event) {
       if (event.data === YT.PlayerState.ENDED) {
