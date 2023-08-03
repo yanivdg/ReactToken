@@ -5,17 +5,18 @@
     const endTime = 80;
     let player;
     function onYouTubeIframeAPIReady() {
+      const r  = Math.floor(Math.random() * 2;
       player = new YT.Player('player', {
         height: window.innerHeight,
         width: window.innerWidth,
-        videoId: setMovieId(flag),
+        videoId: setMovieId(r),
         playerVars: {
           autoplay: 1,
           controls: 0,
           loop: 1,
           start: startTime,
           end: endTime,
-          playlist: videoId,
+          playlist: setMovieId(r),
           modestbranding: 1,
           fs: 0,
           iv_load_policy: 3,
@@ -33,11 +34,9 @@
     function onPlayerReady(event) {
       event.target.playVideo();
     }
-    let flag = false;
     function setMovieId(flag)
-    {
-        flag = !flag;
-        return  flag ? 'RWJGj4Xp_do': 'c7ox2DYLdgo';
+            {
+        return  flag == 0 ? 'RWJGj4Xp_do': 'c7ox2DYLdgo';
     }
     // Function to restart the video when it reaches the end (looping)
     function onPlayerStateChange(event) {
