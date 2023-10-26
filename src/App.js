@@ -66,19 +66,18 @@ const App = () => {
     }
   };
   const sentences = result.split('\n');
- return (
+return (
   React.createElement('div', null,
     React.createElement('form', { onSubmit: handleSubmit },
       React.createElement('div', { style: { textAlign: 'center' } },
         React.createElement('details', { style: { textAlign: 'center' } },
-          React.createElement('summary', { style: { textAlign: 'center' } }, "About the Site",
-            React.createElement('h2', { style: { color: 'cyan' } }, "Welcome to Y.D's experimental site"),
-            React.createElement('h2', { style: { color: 'darkgoldenrod' } }, "built on GitHub (React-client side) and AWS (python-server side)")
-          )
+          React.createElement('summary', { style: { textAlign: 'center' } }, "About the Site"),
+          React.createElement('h2', { style: { color: 'cyan' }, "Welcome to Y.D's experimental site"),
+          React.createElement('h2', { style: { color: 'darkgoldenrod' }, "built on GitHub (React-client side) and AWS (python-server side)")
         )
       ),
       React.createElement('div', { style: { textAlign: 'center', color: ColorContent } },
-        React.createElement('h3', { style: { color: 'green', display: DisplayState } }, "Please enter your login details to get a randomized picture:"),
+        React.createElement('h3', { style: { color: 'green', display: DisplayState }, "Please enter your login details to get a randomized picture:"),
         React.createElement('div', null,
           React.createElement('label', { style: { color: 'white', display: DisplayState }, htmlFor: 'username' }, "User Name:"),
           React.createElement('input', { style: { display: DisplayState }, type: 'text', id: 'username', value: username, onChange: (e) => setUsername(e.target.value) })
@@ -97,6 +96,7 @@ const App = () => {
     htmlContent && React.createElement('div', { style: { textAlign: 'right' }, dangerouslySetInnerHTML: { __html: htmlContent } })
   )
 );
+
   
 // Use ReactDOM.render to render the App component to the root element
 ReactDOM.render(
