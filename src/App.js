@@ -67,6 +67,7 @@ const App = () => {
   };
   const sentences = result.split('\n');
 return (
+  <React.Fragment>
   <div>
     <form onSubmit={handleSubmit}>
       <div style={{ textAlign: 'center' }}>
@@ -97,8 +98,8 @@ return (
     </div>
     {htmlContent && <div style={{ textAlign: 'right' }} dangerouslySetInnerHTML={{ __html: htmlContent }} />}
   </div>
+ </React.Fragment>
 );
-  
 // Use ReactDOM.render to render the App component to the root element
 ReactDOM.render(
   React.createElement(
