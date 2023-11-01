@@ -66,35 +66,40 @@ const App = () => {
     }
   };
   const sentences = result.split('\n');
-return 
-  (React.createElement('div', null,
-    React.createElement('form', { onSubmit: handleSubmit },
-      React.createElement('div', { style: { textAlign: 'center' } },
-        React.createElement('details', { style: { textAlign: 'center' },
-          React.createElement('summary', { style: { textAlign: 'center' }, children: "About the Site" },
-            React.createElement('h2', { style: { color: 'cyan' }, children: "Welcome to Y.D's experimental site" }),
-              React.createElement('h2', { style: { color: 'darkgoldenrod' }, children: "built on GitHub (React-client side) and AWS (python-server side)")
-        )
+ return (
+    React.createElement('div', null,
+      React.createElement('form', { onSubmit: handleSubmit },
+    React.createElement('div', { style: { textAlign: 'center' } },
+      React.createElement('details', { style: { textAlign: 'center' } },
+        React.createElement('summary', { style: { textAlign: 'center' } }, "About the Site"),
+        React.createElement('div', { style: { textAlign: 'center' } },
+          React.createElement('h2', { style: { color: 'cyan' } }, "Welcome to Y.D.'s experimental site"),
+          React.createElement('h2', { style: { color: 'darkgoldenrod' } }, "built on GitHub (React-client side) and AWS (python-server side)"),
+        ),
       ),
       React.createElement('div', { style: { textAlign: 'center', color: ColorContent } },
-        React.createElement('h3', { style: { color: 'green', display: DisplayState }, children: "Please enter your login details to get a randomized picture:"),
-        React.createElement('div', null,
-          React.createElement('label', { style: { color: 'white', display: DisplayState }, htmlFor: 'username', children: "User Name:"),
-          React.createElement('input', { style: { display: DisplayState }, type: 'text', id: 'username', value: username, onChange: (e) => setUsername(e.target.value) })
-        ),
-        React.createElement('div', null,
-          React.createElement('label', { style: { color: 'white', display: DisplayState }, htmlFor: 'password', children: "Password:"),
-          React.createElement('input', { style: { display: DisplayState }, type: 'password', id: 'password', value: password, onChange: (e) => setPassword(e.target.value) })
-        ),
-        React.createElement('button', { type: 'submit', children: loginButtonCaption }),
-        React.createElement('button', { style: { display: DisplayState }, type: 'submit', onClick: () => { window.location.href = 'https://liquidbacket.s3.us-west-1.amazonaws.com/SignUp.html'; }, children: "Sign Up" })
-      )
-    ),
-    React.createElement('div', { style: { textAlign: 'center', color: ColorContent } },
-      result.split('\n').map((line, index) => React.createElement('p', { key: index, children: line })
-    )),
-    htmlContent && React.createElement('div', { style: { textAlign: 'right' }, dangerouslySetInnerHTML: { __html: htmlContent } })
-  );
+          React.createElement('h3', { style: { color: 'green', display: DisplayState } }, "Please enter your login details to get randomize picture:"),
+          React.createElement('div', null,
+            React.createElement('label', { style: { color: 'white' , display: DisplayState}, htmlFor: 'username' }, "User Name:"),
+            React.createElement('input', { style: {display: DisplayState}, type: 'text', id: 'username', value: username, onChange: (e) => setUsername(e.target.value) })
+          ),
+          React.createElement('div', null,
+            React.createElement('label', { style: { color: 'white', display: DisplayState }, htmlFor: 'password' }, "Password:"),
+            React.createElement('input', { style: {display: DisplayState}, type: 'password', id: 'password', value: password, onChange: (e) => setPassword(e.target.value) })
+          ),
+          React.createElement('button', { type: 'submit' }, loginButtonCaption),
+          React.createElement('button', { style: {display: DisplayState}, type: 'submit', onClick: () => 
+                                        { window.location.href = 'https://liquidbacket.s3.us-west-1.amazonaws.com/SignUp.html'; }}, "Sign Up")
+        )
+      ),
+      //React.createElement('div', { style: { textAlign: 'center', color: ColorContent }}, result),
+      React.createElement('div', { style: { textAlign: 'center', color: ColorContent }}, 
+                          result.split('\n').map((line, index) => (React.createElement('p', { key: index }, line)))),
+      htmlContent && React.createElement('div', { style: { textAlign: 'right' }, dangerouslySetInnerHTML: { __html: htmlContent } })
+    )
+   );
+};
+
 // Use ReactDOM.render to render the App component to the root element
 ReactDOM.render(
   React.createElement(
