@@ -70,10 +70,12 @@ const App = () => {
     React.createElement('div', null,
       React.createElement('form', { onSubmit: handleSubmit },
         React.createElement('div', { style: { textAlign: 'center' } },
-                            React.createElement('details', { style: { textAlign: 'center' } },
+              React.createElement('details', { style: { textAlign: 'center' } },
+                    React.createElement('summary', { style: { textAlign: 'center' } }, 'About the Site',
           React.createElement('h2', { style: { color: 'cyan' } }, "Welcome to Y.D's experimental site"),
           React.createElement('h2', { style: { color: 'darkgoldenrod' } }, "built on GitHub(React-client side) and AWS(python-server side)")
                                               )
+                                  )
         ),
         React.createElement('div', { style: { textAlign: 'center', color: ColorContent } },
           React.createElement('h3', { style: { color: 'green', display: DisplayState } }, "Please enter your login details to get randomize picture:"),
