@@ -72,7 +72,7 @@ const App = () => {
         React.createElement('div', { style: { textAlign: 'center' } },
               React.createElement('details', { style: { textAlign: 'center' } },
                     React.createElement('summary', { style: { paddingLeft: 'auto', paddingRight: 'auto', textAlign: 'left', fontSize: '1.5rem', color: 'Violet' } }, 'About the Site'),
-          React.createElement('h2', { style: {paddingLeft: 'auto', paddingRight: 'auto', textAlign: 'left', color: 'cyan' } }, "Welcome to Y.D's experimental site"),
+          React.createElement('h2', { style: {paddingLeft: 'auto', paddingRight: 'auto', textAlign: 'left', color: 'cyan' } }, "Welcome to Y.D's Experimental site"),
           React.createElement('h2', { style: { paddingLeft: 'auto', paddingRight: 'auto', textAlign: 'left',color: 'darkgoldenrod' } }, "")
                                   )
         ),
