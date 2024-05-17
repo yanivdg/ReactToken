@@ -73,11 +73,11 @@ const App = () => {
               React.createElement('details', { style: { textAlign: 'center' } },
                     React.createElement('summary', { style: { paddingLeft: 'auto', paddingRight: 'auto', textAlign: 'left', fontSize: '1.5rem', color: 'Violet' } }, 'About the Site'),
           React.createElement('h2', { style: {paddingLeft: 'auto', paddingRight: 'auto', textAlign: 'left', color: 'cyan' } }, "Welcome to Y.D's Experimental site"),
-          React.createElement('h2', { style: { paddingLeft: 'auto', paddingRight: 'auto', textAlign: 'left',color: 'darkgoldenrod' } }, "")
+          React.createElement('h2', { style: { paddingLeft: 'auto', paddingRight: 'auto', textAlign: 'left',color: 'darkgoldenrod' } }, "Do you know that you can let your parrot hear itslef speak?")
                                   )
         ),
         React.createElement('div', { style: { textAlign: 'center', color: ColorContent } },
-          React.createElement('h3', { style: { color: 'green', display: DisplayState } }, "Please enter your login to start the magic"),
+          React.createElement('h3', { style: { color: 'green', display: DisplayState } }, "Please enter your login to make the magic"),
           React.createElement('div', null,
             React.createElement('label', { style: { color: 'white' , display: DisplayState}, htmlFor: 'username' }, "User Name:"),
             React.createElement('input', { style: {display: DisplayState}, type: 'text', id: 'username', value: username, onChange: (e) => setUsername(e.target.value) })
